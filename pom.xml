@@ -45,7 +45,7 @@
 
     <scm>
         <developerConnection>
-            scm:git:git@github.com:Whatsupas/SFG-Pet-Clinic.git
+            scm:git:https://github.com/Whatsupas/SFG-Pet-Clinic.git
         </developerConnection>
       <tag>sfg-pet-clinic-0.0.1</tag>
   </scm>
