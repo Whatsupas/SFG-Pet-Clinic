@@ -1,9 +1,6 @@
 package guru.springframework.sfgpetclinic.bootstrap;
 
-import guru.springframework.sfgpetclinic.model.Owner;
-import guru.springframework.sfgpetclinic.model.Pet;
-import guru.springframework.sfgpetclinic.model.PetType;
-import guru.springframework.sfgpetclinic.model.Vet;
+import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.OwnerService;
 import guru.springframework.sfgpetclinic.services.PetService;
 import guru.springframework.sfgpetclinic.services.PetTypeService;
@@ -34,6 +31,15 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        boolean isEmpty = petTypeService.findAll().isEmpty();
+
+        if (isEmpty){
+            LoadData();
+        }
+
+    }
+
+    private void LoadData() {
         // Adding pet types
         PetType dog = new PetType();
         dog.setName("Dog");
@@ -85,16 +91,25 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Exe");
+        Speciality speciality1 = new Speciality();
+        speciality1.setDescription("Radiology");
+        vet1.setSpeciality(speciality1);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
+        Speciality speciality2 = new Speciality();
+        speciality2.setDescription("Surgery");
+        vet2.setSpeciality(speciality2);
         vetService.save(vet2);
 
         Vet vet3 = new Vet();
         vet3.setFirstName("Roger");
         vet3.setLastName("Smith");
+        Speciality speciality3 = new Speciality();
+        speciality3.setDescription("Dentistry");
+        vet3.setSpeciality(speciality3);
         vetService.save(vet3);
 
         System.out.println("Loaded vets ....");
