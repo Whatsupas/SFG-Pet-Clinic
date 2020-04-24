@@ -22,7 +22,7 @@ public class VisitMapService extends AbstractMapService<Visit,Long> implements V
 
         if(visit.getPet() == null || visit.getPet().getOwner() == null ||
            visit.getPet().getId() == null || visit.getPet().getOwner().getId() == null){
-            throw new RuntimeException("Invalid Vissit")
+            throw new RuntimeException("Invalid Vissit");
         }
         return super.save(visit);
     }
