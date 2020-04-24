@@ -11,7 +11,7 @@ import java.util.Set;
  * Created by Robertas Tutlys on 2020-03-31
  */
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality,Long> implements SpecialityService {
+public class SpecialityMapService extends AbstractMapService<Speciality,Long> implements SpecialityService {
 
     @Override
     public Speciality findById(Long id) {
