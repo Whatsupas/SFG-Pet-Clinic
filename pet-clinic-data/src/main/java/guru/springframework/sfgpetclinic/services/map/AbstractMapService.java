@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.services.map;
 import guru.springframework.sfgpetclinic.model.BaseEntity;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Long > {
 
@@ -39,4 +40,5 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long >
     private Long getNextId(){
         return map.size() == 0 ? 1L : Collections.max(map.keySet()) + 1;
     }
+
 }
